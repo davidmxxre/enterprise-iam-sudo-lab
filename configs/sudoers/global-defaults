@@ -1,0 +1,10 @@
+[visudo]
+
+Defaults  use_pty
+Defaults  logfile=”/var/log/sudo.log”
+Defaults  log_input
+Defaults  log_output
+Defaults  iolog_dir=”/var/log/sudo-io”
+Defaults  timestamp_timeout=5
+Defaults  env_reset
+Defaults  secure_path=”/sbin:/bin:/usr/sbin:/usr/bin
