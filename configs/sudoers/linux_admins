@@ -1,0 +1,9 @@
+User_Alias  ADMINS  =  %linux_admins
+Runas_Alias ROOT =  root
+
+Defaults:%admins  use_pty
+Defaults:%admins  log_input,log_output
+Defaults:%admins timestamp_timeout=5
+Defaults:%admins !setenv
+
+ADMINS  ALL=(ROOT)  ALL
