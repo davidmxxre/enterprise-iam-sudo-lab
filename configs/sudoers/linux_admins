@@ -1,3 +1,5 @@
+visudo -f /etc/sudoers.d/10-role-linux_admin
+
 User_Alias  ADMINS  =  %linux_admins
 Runas_Alias ROOT =  root
 
