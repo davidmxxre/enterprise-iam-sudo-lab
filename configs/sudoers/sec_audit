@@ -1,0 +1,20 @@
+visudo -f /etc/sudoers.d/30-role-sec_audit
+
+# --------- Aliases ---------
+
+User_Alias SEC_AUDIT = %sec_ops
+
+Cmnd_Alias AUDIT_LOGS = /usr/bin/journalctl, /usr/bin/journalctl *, /usr/sbin/aureport, /usr/sbin/ausearch, /usr/sbin/auditctl -s, /usr/sbin/semanage boolean -l, /usr/sbin/semanage fcontext -l, /usr/sbin/getsebool, /usr/sbin/sestatus, /usr/sbin/ls -l /var/log/*
+
+# ------------ Scoped Defaults ------------
+
+Defaults:%sec_ops  use_pty
+Defaults:%sec_ops  log_input,log_output
+Defaults:%sec_ops  timestamp_timeout=0
+Defaults:%sec_ops  !setenv
+Defaults:%sec_ops  noexec
+
+
+# ------------ Privilege Specifications ------------
+
+SEC_AUDIT  ALL=(root)  AUDIT_LOGS
