@@ -1,0 +1,8 @@
+visudo -f /etc/sudoers.d/20-role-ap_opps
+
+User_Alias  OPS  =  %ap_opps
+Cmnd_Alias  OPS_CMDS  = /usr/bin/systemctl status httpd, /usr/bin/systemctl restart httpd, /usr/bin/journalctl -u httpd --no-pager
+
+Defaults:%ap_opps  log_input,log_output
+
+OPS  ALL=(root)  OPS_CMDS
