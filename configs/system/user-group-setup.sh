@@ -6,7 +6,7 @@ Prepare for the lab by creating custom UID/GID ranges and user/group accounts.
 [vim /etc/login.defs]
 
 Look for UID_MIN/UID_MAX and GID_MIN/GID_MAX
-For UID I will be using the range 5000 -10000
+For UID I will be using the range 5000 - 10000
 For GID I will be using the range 11000 - 50000
 
 ## User/Group Creation:
@@ -29,4 +29,4 @@ sec_ops
 
 Install httpd and enable service
 [ dnf -y install httpd ]
-[ systemctl enable - -now httpd ]
+[ systemctl enable --now httpd ]
